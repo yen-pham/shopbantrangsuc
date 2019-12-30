@@ -1,12 +1,12 @@
 <?php 
 	if(!isset($bien_bao_mat)){exit();}
 	$tv="select * from banner limit 0,1 ";
-	$tv_1=mysql_query($tv);
-	$tv_2=mysql_fetch_array($tv_1);
-	$rong=$tv_2['rong'];
-	$cao=$tv_2['cao'];
-	$ten_anh=$tv_2['hinh'];
-	$link_hinh="../hinh_anh/banner/".$tv_2['hinh'];	
+	$tv_1=mysqli_query($conn, $tv);
+	$tv_2=mysqli_fetch_row($tv_1);
+	$rong=$tv_2[2];
+	$cao=$tv_2[3];
+	$ten_anh=$tv_2[1];
+	$link_hinh="".$tv_2[1];	
 ?>
 <form action="" method="post" enctype="multipart/form-data" >
 	<table width="990px" >

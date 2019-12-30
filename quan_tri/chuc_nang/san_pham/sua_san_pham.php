@@ -4,15 +4,15 @@
 <?php 
 	$id=$_GET['id'];
 	$tv="select * from san_pham where id='$id' ";
-	$tv_1=mysql_query($tv);
-	$tv_2=mysql_fetch_array($tv_1);
-	$ten=$tv_2['ten'];
-	$gia=$tv_2['gia'];
-	$trang_chu=$tv_2['trang_chu'];
-	$noi_bat=$tv_2['noi_bat'];
-	$noi_dung=$tv_2['noi_dung'];
-	$ten_anh=$tv_2['hinh_anh'];
-	$link_hinh="../hinh_anh/san_pham/".$tv_2['hinh_anh'];
+	$tv_1=mysqli_query($conn, $tv);
+	$tv_2=mysqli_fetch_row($tv_1);
+	$ten=$tv_2[1];
+	$gia=$tv_2[2];
+	$trang_chu=$tv_2[7];
+	$noi_bat=$tv_2[6];
+	$noi_dung=$tv_2[4];
+	$ten_anh=$tv_2[3];
+	$link_hinh="../hinh_anh/san_pham/".$tv_2[3];
 	$link_dong="?thamso=quan_ly_san_pham&id_menu=".$_GET['id_menu']."&trang=".$_GET['trang'];
 ?>
 <form action="" method="post" enctype="multipart/form-data" >

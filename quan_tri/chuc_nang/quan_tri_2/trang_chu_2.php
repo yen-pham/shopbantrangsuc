@@ -2,10 +2,10 @@
 	if(!isset($bien_bao_mat)){exit();}
 ?>
 <style type="text/css" >
-	a.lk_2{text-decoration:none;color:black;font-size:22px;line-height:30px;}
-	a.lk_2:hover{color:red;}
+	a.lk_2{text-decoration:none;color:white;font-size:22px;line-height:30px;}
+	a.lk_2:hover{color:yellow;}
 </style>
-<table width="990px" >
+<table width="990px" style="margin-left:300px" >
 	<tr>
 		<td width="495px" valign="top" >
 			<a href="?thamso=them_menu_ngang" class="lk_2" >Thêm menu ngang</a><br>

@@ -4,11 +4,11 @@
 <?php 
 	$id=$_GET['id'];
 	$tv="select * from slideshow where id='$id' ";
-	$tv_1=mysql_query($tv);
-	$tv_2=mysql_fetch_array($tv_1);
-	$ten_anh=$tv_2['hinh'];
-	$lien_ket=$tv_2['lien_ket'];
-	$link_hinh="../hinh_anh/slideshow/".$tv_2['hinh'];
+	$tv_1=mysqli_query($conn, $tv);
+	$tv_2=mysqli_fetch_row($tv_1);
+	$ten_anh=$tv_2[1];
+	$lien_ket=$tv_2[2];
+	$link_hinh="../hinh_anh/slideshow/".$tv_2[1];
 	$link_dong="?thamso=quan_ly_slideshow";
 ?>
 <form action="" method="post" enctype="multipart/form-data" >

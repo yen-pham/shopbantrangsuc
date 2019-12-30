@@ -3,7 +3,7 @@
 ?>
 <?php 
 	$tv="select * from slideshow order by id ";
-	$tv_1=mysql_query($tv);
+	$tv_1=mysqli_query($conn, $tv);
 ?>
 
 <table width="990px" class="tb_a1" >
@@ -13,10 +13,10 @@
 		<td align="center" width="140px" ><b>Xóa</b></td>
 	</tr>
 	<?php 
-		while($tv_2=mysql_fetch_array($tv_1))
+		while($tv_2=mysqli_fetch_row($tv_1))
 		{
-			$id=$tv_2['id'];
-			$link_hinh="../hinh_anh/slideshow/".$tv_2['hinh'];
+			$id=$tv_2[0];
+			$link_hinh="".$tv_2[1];
 			$link_sua="?thamso=sua_slideshow&id=".$id;
 			$link_xoa="?xoa_slideshow=co&id=".$id;
 			?>

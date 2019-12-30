@@ -1,3 +1,40 @@
+<style>
+
+/* Khung chứa thumbnail */
+  table tr td a  {
+    
+    overflow: hidden; 
+    border: 1px solid #e5e5e5; 
+}
+ 
+/* Thumbnail */
+table tr td a img {
+    
+    transition-duration: 0.5s;
+        /* Safari & Google Chrome */
+        -webkit-transition-duration: 0.5s; 
+        /* Mozilla Firefox */
+        -moz-transition-duration: 0.5s; 
+        /* Opera */
+        -o-transition-duration: 0.5s;
+        /* IE 9 */
+        -ms-transition-duration: 0.5s;
+}
+         
+/* Hover chuột vào thumbnail */
+table tr td a img:hover {
+    transform: scale(1.2);
+        /* Safari & Google Chrome */
+        -webkit-transform: scale(1.2);
+        /* Mozilla Firefox */
+        -moz-transform: scale(1.2); 
+        /* Opera */
+        -o-transform: scale(1.2);
+        /* IE 9 */
+        -ms-transform: scale(1.2);
+    cursor: pointer; 
+}
+</style>
 <br><br>
 Sản phẩm của chúng tôi 
 <br><br>

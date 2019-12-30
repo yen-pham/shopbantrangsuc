@@ -6,7 +6,7 @@
 
 	$tv="select id,ten,gia,hinh_anh from san_pham where noi_bat='co' order by id desc limit 0,10";
 
-	$tv_1=mysql_query($tv);
+	$tv_1=mysqli_query($conn, $tv);
 ?>
 <div style="width:990px;text-align:left" >
 	<form method="post" >
@@ -19,13 +19,13 @@
 			</tr>
 			<?php 
 				$i=1;
-				while($tv_2=mysql_fetch_array($tv_1))
+				while($tv_2=mysqli_fetch_row($tv_1))
 				{
-					$id=$tv_2['id'];
-					$ten=$tv_2['ten'];
-					$gia=$tv_2['gia'];
+					$id=$tv_2[0];
+					$ten=$tv_2[1];
+					$gia=$tv_2[2];
 					$gia=number_format($gia,0,",",".");
-					$link_hinh="../hinh_anh/san_pham/".$tv_2['hinh_anh'];
+					$link_hinh="".$tv_2[3];
 					$ten_select="select_".$i;
 					$ten_id="id_".$i;
 					?>

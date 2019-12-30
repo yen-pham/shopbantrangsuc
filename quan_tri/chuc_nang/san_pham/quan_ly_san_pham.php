@@ -24,12 +24,12 @@
 	<option value="" >Toàn bộ sản phẩm</option>
 	<?php 
 		$tv="select * from menu_doc order by id ";
-		$tv_1=mysql_query($tv);
+		$tv_1=mysqli_query($conn, $tv);
 		$a="";
-		while($tv_2=mysql_fetch_array($tv_1))
+		while($tv_2=mysqli_fetch_row($tv_1))
 		{
-			$ten=$tv_2['ten'];
-			$id=$tv_2['id'];
+			$ten=$tv_2[1];
+			$id=$tv_2[0];
 			if($id_menu==$id)
 			{
 				$a="selected";
@@ -55,8 +55,8 @@
 	{
 		$tv="select count(*) from san_pham where thuoc_menu='$id_menu' ";
 	}
-	$tv_1=mysql_query($tv);
-	$tv_2=mysql_fetch_array($tv_1);
+	$tv_1=mysqli_query($conn, $tv);
+	$tv_2=mysqli_fetch_row($tv_1);
 	$so_trang=ceil($tv_2[0]/$so_dong_tren_mot_trang);
 	
 	$vtbd=($_GET['trang']-1)*$so_dong_tren_mot_trang;
@@ -68,7 +68,7 @@
 	{
 		$tv="select id,ten,gia,hinh_anh from san_pham where thuoc_menu='$id_menu' order by id desc limit $vtbd,$so_dong_tren_mot_trang";
 	}
-	$tv_1=mysql_query($tv);
+	$tv_1=mysqli_query($conn, $tv);
 ?>
 
 <table width="990px" class="tb_a1" >
@@ -80,13 +80,13 @@
 		<td align="center" width="140px" ><b>Xóa</b></td>
 	</tr>
 	<?php 
-		while($tv_2=mysql_fetch_array($tv_1))
+		while($tv_2=mysqli_fetch_row($tv_1))
 		{
-			$id=$tv_2['id'];
-			$ten=$tv_2['ten'];
-			$gia=$tv_2['gia'];
+			$id=$tv_2[0];
+			$ten=$tv_2[1];
+			$gia=$tv_2[2];
 			$gia=number_format($gia,0,",",".");
-			$link_hinh="../hinh_anh/san_pham/".$tv_2['hinh_anh'];
+			$link_hinh="../hinh_anh/san_pham/".$tv_2[3];
 			$link_sua="?thamso=sua_san_pham&id_menu=".$id_menu."&id=".$id."&trang=".$_GET['trang'];
 			$link_xoa="?xoa_san_pham=co&id=".$id;
 			?>
@@ -99,7 +99,7 @@
 					<td>
 						<a href="<?php echo $link_sua; ?>" class="lk_a1" style="margin-left:10px" ><?php echo $ten; ?></a>
 					</td>
-					<td align="center" >
+					<td align="center" style="color:white" >
 						<?php echo $gia; ?>
 					</td>
 					<td align="center" >

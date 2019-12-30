@@ -8,8 +8,8 @@
 
 	$tv="select count(id) from san_pham where trang_chu='co' ";
 
-	$tv_1=mysql_query($tv);
-	$tv_2=mysql_fetch_array($tv_1);
+	$tv_1=mysqli_query($conn, $tv);
+	$tv_2=mysqli_fetch_row($tv_1);
 	$so_trang=ceil($tv_2[0]/$so_dong_tren_mot_trang);
 	
 	$vtbd=($_GET['trang']-1)*$so_dong_tren_mot_trang;
@@ -29,14 +29,14 @@
 		</tr>
 		<?php 
 			$i=1;
-			while($tv_2=mysql_fetch_array($tv_1))
+			while($tv_2=mysqli_fetch_row($tv_1))
 			{
-				$id=$tv_2['id'];
-				$ten=$tv_2['ten'];
-				$gia=$tv_2['gia'];
+				$id=$tv_2[0];
+				$ten=$tv_2[1];
+				$gia=$tv_2[2];
 				$gia=number_format($gia,0,",",".");
-				$link_hinh="../hinh_anh/san_pham/".$tv_2['hinh_anh'];
-				$sap_xep_trang_chu=$tv_2['sap_xep_trang_chu'];
+				$link_hinh="".$tv_2[3];
+				$sap_xep_trang_chu=$tv_2[4];
 				$ten_select="select_".$i;
 				$ten_input="input_".$i;
 				$ten_id="id_".$i;

@@ -15,8 +15,8 @@
 	if($ten_file_anh_tai_len!="")
 	{
 		$tv_k="select count(*) from slideshow where hinh='$ten_file_anh' ";
-		$tv_k_1=mysql_query($tv_k);
-		$tv_k_2=mysql_fetch_array($tv_k_1);
+		$tv_k_1=mysqli_query($conn, $tv);
+		$tv_k_2=mysqli_fetch_row($tv_k_1);
 		if($tv_k_2[0]!=0)
 		{
 			$kiem_tra_anh="khong_hop_le";	
@@ -39,7 +39,7 @@
 		lien_ket = '$lien_ket'
 		WHERE id =$id;
 		";
-		mysql_query($tv);	
+		mysqli_query($conn, $tv);	
 				
 
 	}

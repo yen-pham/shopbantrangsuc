@@ -18,6 +18,13 @@
 		<title>Quản trị</title>
 		<script src='phan_bo_tro/tinymce/js/tinymce/tinymce.min.js'></script>
 		<link rel="stylesheet" type="text/css" href="giao_dien/giao_dien.css">
+		<link rel="stylesheet" href="dangnhap/css/font-awesome.css"> <!-- Font-Awesome-Icons-CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="dangnhap/css/style.css" type="text/css" media="all" /> <!-- Style-CSS --> 
+<!-- //css files -->
+<!-- web-fonts -->
+<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700" rel="stylesheet">
 	</head>
 	<body>
 		<?php 

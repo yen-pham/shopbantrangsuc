@@ -15,7 +15,7 @@
 		NULL ,
 		'$ten_menu'
 		);";
-		mysql_query($tv);
+		mysqli_query($conn, $tv);
 	}
 	else 
 	{

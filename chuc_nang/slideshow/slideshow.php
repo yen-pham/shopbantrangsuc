@@ -33,5 +33,5 @@
 		i_img=i_img+1;
 		if(i_img>=img_slideshow.length){i_img=0;}
 		img_slideshow[i_img].style.display="block";		
-	},5000);
+	},2000);
 </script>

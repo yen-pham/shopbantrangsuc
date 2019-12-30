@@ -3,9 +3,9 @@
 ?>
 <?php 
 	$tv="select * from thong_tin_quan_tri where id='1' ";
-	$tv_1=mysql_query($tv);
-	$tv_2=mysql_fetch_array($tv_1);
-	$ky_danh=$tv_2['ky_danh'];	
+	$tv_1=mysqli_query($conn, $tv);
+	$tv_2=mysqli_fetch_row($tv_1);
+	$ky_danh=$tv_2[1];	
 ?>
 <form action="" method="post" >
 	<table width="990px" >

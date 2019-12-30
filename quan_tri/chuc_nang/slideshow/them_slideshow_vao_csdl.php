@@ -8,8 +8,8 @@
 	if($ten_file_anh!="")
 	{
 		$tv_k="select count(*) from slideshow where hinh='$ten_file_anh' ";
-		$tv_k_1=mysql_query($tv_k);
-		$tv_k_2=mysql_fetch_array($tv_k_1);
+		$tv_k_1=mysqli_query($conn,$tv_k);
+		$tv_k_2=mysqli_fetch_row($tv_k_1);
 		if($tv_k_2[0]==0)
 		{
 			$tv="

@@ -3,10 +3,10 @@
 ?>
 <?php 
 	$tv="select * from thong_tin_quan_tri where id='1' ";
-	$tv_1=mysql_query($tv);
-	$tv_2=mysql_fetch_array($tv_1);
+	$tv_1=mysqli_query($conn, $tv);
+	$tv_2=mysqli_fetch_row($tv_1);
 	$ky_danh=$_POST['ky_danh'];
-	$mat_khau=$tv_2['mat_khau'];
+	$mat_khau=$tv_2[2];
 
 	$mat_khau_tu_form=trim($_POST['mat_khau']);
 	if($mat_khau_tu_form!="khong_doi")
@@ -21,7 +21,7 @@
 	mat_khau = '$mat_khau' 
 	WHERE id =1;
 	";
-	mysql_query($tv);
+	mysqli_query($conn, $tv);
 	
 	$_SESSION['ky_danh']=$ky_danh;
 	$_SESSION['mat_khau']=$mat_khau;
